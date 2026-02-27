@@ -11,16 +11,11 @@ import base64
 import io
 import traceback
 from PIL import Image
+from flask_cors import CORS
 
 app = Flask(__name__)
-
+CORS(app, resources={r"/api/*": {"origins": "*"}}, supports_credentials=True)
 # ── CORS — manually on every response (most reliable approach) ────────
-@app.after_request
-def cors(response):
-    response.headers["Access-Control-Allow-Origin"]  = "*"
-    response.headers["Access-Control-Allow-Headers"] = "*"
-    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
-    return response
 
 @app.errorhandler(Exception)
 def handle_exception(e):
@@ -29,10 +24,7 @@ def handle_exception(e):
     resp.status_code = 500
     return resp
 
-# Handle OPTIONS preflight for all /api routes
-@app.route("/api/<path:dummy>", methods=["OPTIONS"])
-def preflight(dummy):
-    return "", 204
+
 
 # ── Config ────────────────────────────────────────────────────────────
 ROBOFLOW_API_KEY = "luFuyH88RAQnCmLZoWCp"
@@ -186,7 +178,7 @@ def draw_label(img, text, pt, color):
 def health():
     return jsonify({"status": "ok"})
 
-@app.route("/api/analyze", methods=["POST"])
+@app.route("/api/analyze", methods=["POST", "OPTIONS"])
 def analyze():
     try:
         if "image" not in request.files:
