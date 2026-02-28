@@ -180,6 +180,10 @@ def health():
 
 @app.route("/api/analyze", methods=["POST", "OPTIONS"])
 def analyze():
+
+    if request.method == "OPTIONS":
+        return jsonify({"status": "ok"}), 200
+
     try:
         if "image" not in request.files:
             return jsonify({"error": "No image in request"}), 400
