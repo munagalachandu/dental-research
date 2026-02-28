@@ -3,4 +3,4 @@ flask-cors
 numpy
 opencv-python-headless
 pillow
-inference-sdk
+inference
