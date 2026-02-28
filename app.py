@@ -6,7 +6,8 @@ python app.py
 
 import os
 os.environ["ROBOFLOW_API_KEY"] = "luFuyH88RAQnCmLZoWCp"
-
+import matplotlib
+matplotlib.use("Agg")
 from flask import Flask, request, jsonify
 import numpy as np
 import cv2
@@ -352,9 +353,14 @@ def analyze():
         traceback.print_exc()
         return jsonify({"error": str(e)}), 500
 
-
 if __name__ == "__main__":
     print("Starting Flask...")
 
-    port = int(os.environ.get("PORT", 5000))  # Render gives PORT
-    app.run(host="0.0.0.0", port=port, debug=False)
+    port = int(os.environ.get("PORT", 10000))  # Render expects this
+
+    app.run(
+        host="0.0.0.0",
+        port=port,
+        debug=False,
+        use_reloader=False   # IMPORTANT on Render
+    )
