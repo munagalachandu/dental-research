@@ -6,8 +6,7 @@ python app.py
 
 import os
 os.environ["ROBOFLOW_API_KEY"] = "luFuyH88RAQnCmLZoWCp"
-import matplotlib
-matplotlib.use("Agg")
+
 from flask import Flask, request, jsonify
 import numpy as np
 import cv2
