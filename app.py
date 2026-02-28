@@ -15,7 +15,6 @@ import base64
 import io
 import traceback
 from PIL import Image
-from inference import get_model
 from werkzeug.exceptions import HTTPException
 from concurrent.futures import ThreadPoolExecutor
 
@@ -77,12 +76,14 @@ _nerve_model = None
 def get_bone_model():
     global _bone_model
     if _bone_model is None:
+        from inference import get_model
         _bone_model = get_model(model_id=BONE_MODEL_ID)
     return _bone_model
 
 def get_nerve_model():
     global _nerve_model
     if _nerve_model is None:
+        from inference import get_model
         _nerve_model = get_model(model_id=NERVE_MODEL_ID)
     return _nerve_model
 
