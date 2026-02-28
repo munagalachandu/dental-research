@@ -15,6 +15,7 @@ import base64
 import io
 import traceback
 from PIL import Image
+from flask_cors import CORS
 from werkzeug.exceptions import HTTPException
 from concurrent.futures import ThreadPoolExecutor
 
@@ -27,17 +28,8 @@ from analysis_utils import (
 )
 
 app = Flask(__name__)
+CORS(app)
 implant_catalog = load_implant_catalog()
-
-# ─────────────────────────────────────────────
-# CORS
-# ─────────────────────────────────────────────
-@app.after_request
-def cors(response):
-    response.headers["Access-Control-Allow-Origin"]  = "*"
-    response.headers["Access-Control-Allow-Headers"] = "*"
-    response.headers["Access-Control-Allow-Methods"] = "GET, POST, OPTIONS"
-    return response
 
 @app.errorhandler(Exception)
 def handle_exception(e):
