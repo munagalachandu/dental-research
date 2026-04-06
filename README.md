@@ -95,6 +95,7 @@ Results
 ★ Output: Clinically usable implant size recommendations
 <img width="500" height="234" alt="image" src="https://github.com/user-attachments/assets/0ecadee2-378e-4875-be5b-6bb121f4f174" />
 <img width="2183" height="812" alt="image" src="https://github.com/user-attachments/assets/b6588061-7b89-4fd3-a665-02db987cb171" />
+<img width="1901" height="898" alt="Screenshot 2026-02-28 170618" src="https://github.com/user-attachments/assets/cbe5a17b-f06c-4438-9feb-f6b398c10d3c" />
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
