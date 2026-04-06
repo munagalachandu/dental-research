@@ -16,7 +16,7 @@ The work contributes to the dissertation:
 
 The system combines deep learning-based segmentation with statistical modeling to generate clinically valid implant size recommendations.
 <img width="294" height="482" alt="image" src="https://github.com/user-attachments/assets/2a272e3a-c6a4-4f50-9689-360f02b78af4" />
-<img width="405" height="657" alt="image" src="https://github.com/user-attachments/assets/5bcfd02d-d062-4f5f-9d52-28301d88f0b0" />
+<img width="294" height="482" alt="image" src="https://github.com/user-attachments/assets/5bcfd02d-d062-4f5f-9d52-28301d88f0b0" />
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
