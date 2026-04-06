@@ -1,3 +1,8 @@
+#mandibular-implant-prediction-cbct
+AI-based mandibular implant size prediction using Mask R-CNN and PCA on CBCT images
+
+
+
 AI-Based Mandibular Implant Size Prediction using CBCT Imaging
 Computer Vision Research Internship
 
